@@ -1,4 +1,0 @@
-hello
-kingmaker
-instahack
-Facebookhack
