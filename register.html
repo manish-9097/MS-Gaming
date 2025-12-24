@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registered Players</title>
+<style>
+body{
+ font-family:Arial;
+ background:#0b0b0b;
+ color:#fff;
+}
+.box{
+ max-width:800px;
+ margin:40px auto;
+ background:#151515;
+ padding:25px;
+ border-radius:10px;
+ box-shadow:0 0 15px #00ff99;
+}
+table{
+ width:100%;
+ border-collapse:collapse;
+}
+th,td{
+ padding:12px;
+ border-bottom:1px solid #333;
+ text-align:center;
+}
+th{
+ color:#00ff99;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Registered Players List 🎮</h2>
+
+<table>
+<thead>
+<tr>
+ <th>#</th>
+ <th>Player Name</th>
+ <th>UID</th>
+ <th>Match</th>
+</tr>
+</thead>
+<tbody id="playerTable"></tbody>
+</table>
+
+</div>
+
+<script>
+let players = JSON.parse(localStorage.getItem("players")) || [];
+let table = document.getElementById("playerTable");
+
+players.forEach((p,i)=>{
+ let row = `<tr>
+   <td>${i+1}</td>
+   <td>${p.name}</td>
+   <td>${p.uid}</td>
+   <td>${p.match}</td>
+ </tr>`;
+ table.innerHTML += row;
+});
+</script>
+
+</body>
+</html>
